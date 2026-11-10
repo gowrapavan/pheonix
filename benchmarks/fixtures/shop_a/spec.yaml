@@ -1,0 +1,46 @@
+spec_version: 1
+name: shop_a_fixture
+revision: 1
+target:
+  kind: fixture
+  ref: benchmarks/fixtures/shop_a/page_001.html
+  wait_for: .product-card
+
+record:
+  root: .product-card
+
+fields:
+  title:
+    type: string
+    required: true
+    locators:
+      - kind: css
+        value: h2.product-title
+    validators:
+      - kind: non_empty
+      - kind: max_length
+        value: 200
+
+  price:
+    type: decimal
+    required: true
+    locators:
+      - kind: css
+        value: .product-price
+    normalize:
+      - strip_currency
+      - remove_thousands_separator
+    validators:
+      - kind: range
+        min: 0
+        max: 10000000
+
+  availability:
+    type: enum
+    values:
+      - In Stock
+      - Out of Stock
+    required: false
+    locators:
+      - kind: css
+        value: .availability
