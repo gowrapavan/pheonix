@@ -1,0 +1,10 @@
+pydantic>=2
+pyyaml
+lxml
+cssselect
+
+[dev]
+pytest
+pytest-cov
+ruff
+playwright

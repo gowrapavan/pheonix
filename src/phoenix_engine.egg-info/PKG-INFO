@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: phoenix-engine
+Version: 0.0.1
+Requires-Python: >=3.12
+Requires-Dist: pydantic>=2
+Requires-Dist: pyyaml
+Requires-Dist: lxml
+Requires-Dist: cssselect
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: playwright; extra == "dev"
